@@ -18,11 +18,7 @@
 <link rel="icon" type="image/svg+xml" href="assets/logo-emblem.svg">
 <link rel="stylesheet" href="assets/fonts/pretendardvariable-dynamic-subset.css" media="print" onload="this.media='all'">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/display/bodoni-moda.woff2" crossorigin>
-<link rel="preload" as="image" type="image/avif" imagesrcset="assets/mob-600.avif 600w, assets/mob.avif 1000w" imagesizes="(max-width:700px) 600px, 45vw">
-<link rel="preload" as="image" type="image/avif" imagesrcset="assets/veil-600.avif 600w, assets/veil.avif 1000w" imagesizes="(max-width:700px) 600px, 45vw">
-<link rel="preload" as="image" type="image/avif" imagesrcset="assets/sien-600.avif 600w, assets/sien.avif 1000w" imagesizes="(max-width:700px) 600px, 45vw">
-<link rel="preload" as="image" type="image/avif" imagesrcset="assets/rue-600.avif 600w, assets/rue.avif 1000w" imagesizes="(max-width:700px) 600px, 45vw">
-<link rel="preload" as="image" type="image/avif" imagesrcset="assets/milla-600.avif 600w, assets/milla.avif 1000w" imagesizes="(max-width:700px) 600px, 45vw">
+<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesrcset="assets/mob-600.avif 600w, assets/mob.avif 1000w" imagesizes="(max-width:700px) 600px, 45vw">
 <noscript><link rel="stylesheet" href="assets/fonts/pretendardvariable-dynamic-subset.css"></noscript>
 <style>
 @font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;font-display:swap;src:url(assets/fonts/display/bodoni-moda.woff2) format('woff2')}
@@ -700,7 +696,7 @@ const U=[
 ];
 
 /* ================= RENDER ================= */
-$('#panels').innerHTML=A.map(a=>`<a href="#artist-${a.id}" class="panel" style="--c:${a.c}" data-cursor="View">${PIC(a.id,"(max-width:700px) 600px, 45vw",'alt=""')}<span class="vn">${a.name}<small>${a.unit}</small></span><span class="cap"><b>${a.en}</b><span>${a.kr} · ${a.pos.join(' · ')}</span></span></a>`).join('');
+$('#panels').innerHTML=A.map((a,i)=>`<a href="#artist-${a.id}" class="panel" style="--c:${a.c}" data-cursor="View">${PIC(a.id,"(max-width:700px) 600px, 45vw",i?'alt="" decoding="async" fetchpriority="low"':'alt="" fetchpriority="high"')}<span class="vn">${a.name}<small>${a.unit}</small></span><span class="cap"><b>${a.en}</b><span>${a.kr} · ${a.pos.join(' · ')}</span></span></a>`).join('');
 const mqI=['The Sweetest Nightmare','MOB','VEIL','SIEN','RUE','MILLA','3 curses, 1 stage','Nightfall'];
 $('#mq').innerHTML=[...mqI,...mqI].map((x,i)=>`<span class="${['','o','i'][i%3]}">${x}</span><img src="assets/logo-emblem.svg" alt="">`).join('');
 $('#units').innerHTML=U.map(u=>`<div class="unit">
@@ -900,8 +896,8 @@ addEventListener('load',sizeStory);
 /* ================= LOADER ================= */
 const imgs=$$('#panels img');let loaded=0,shown=0;const t0=performance.now();
 imgs.forEach(i=>{if(i.complete)loaded++;else i.onload=i.onerror=()=>loaded++});
-(function tick(){const target=Math.min(100,(loaded/imgs.length)*70+Math.min(30,(performance.now()-t0)/14));shown=lerp(shown,target,.2);if(target>=99.5&&shown>98.5)shown=100;$('#pcN').textContent=Math.round(shown);
- if(shown<100&&performance.now()-t0<2500)requestAnimationFrame(tick);else{$('#pcN').textContent=100;setTimeout(start,250)}})();
+(function tick(){const target=Math.min(100,(imgs[0]&&imgs[0].complete?60:0)+(loaded/imgs.length)*10+Math.min(30,(performance.now()-t0)/12));shown=lerp(shown,target,.2);if(target>=99.5&&shown>98.5)shown=100;$('#pcN').textContent=Math.round(shown);
+ if(shown<100&&performance.now()-t0<1600)requestAnimationFrame(tick);else{$('#pcN').textContent=100;setTimeout(start,250)}})();
 function start(){if(document.body.classList.contains('ready'))return;$('#loader').classList.add('done');document.body.classList.add('ready');lockScroll(false);setTimeout(()=>$('#loader').style.display='none',1300);sizeStory();if(location.hash)route()}
 requestAnimationFrame(frame);
 })();
