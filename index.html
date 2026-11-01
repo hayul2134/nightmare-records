@@ -7,13 +7,21 @@
 <meta name="description" content="NIGHTMARE RECORDS · 잊힌 존재들에게 무대를. 버추얼 아티스트 레이블 나이트메어 레코즈 공식 사이트.">
 <meta property="og:title" content="NIGHTMARE RECORDS">
 <meta property="og:description" content="가장 달콤한 악몽, 당신의 밤을 찾아갑니다.">
-<meta property="og:image" content="assets/og.jpg">
+<meta property="og:image" content="https://nightmare-records.pages.dev/assets/og.jpg">
+<meta property="og:url" content="https://nightmare-records.pages.dev/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NIGHTMARE RECORDS">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://nightmare-records.pages.dev/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"NIGHTMARE RECORDS","alternateName":"나이트메어 레코즈","url":"https://nightmare-records.pages.dev/","logo":"https://nightmare-records.pages.dev/assets/logo-emblem.svg","description":"버추얼 아티스트 레이블 (기획 포트폴리오용 가상 기업)"}</script>
 <meta name="theme-color" content="#08060f">
 <link rel="icon" type="image/svg+xml" href="assets/logo-emblem.svg">
-<link rel="stylesheet" href="assets/fonts/pretendardvariable-dynamic-subset.css">
+<link rel="preload" as="image" href="assets/mob-600.webp" media="(max-width:700px)">
+<link rel="stylesheet" href="assets/fonts/pretendardvariable-dynamic-subset.css" media="print" onload="this.media='all'">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="assets/fonts/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@600;700&display=swap"></noscript>
 <style>
 :root{
   --ink:#08060f; --ink2:#0f0b1c; --paper:#efeaf6; --fg:#f1ecff; --mute:#9890b4; --line:rgba(201,184,255,.13);
@@ -35,7 +43,7 @@ img{display:block;max-width:100%}
 @media (hover:hover) and (pointer:fine){body.cur,body.cur a,body.cur button{cursor:none}}
 
 /* grain + progress */
-.grain{position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain .9s steps(5) infinite}
+.grain{position:fixed;will-change:transform;inset:-50%;z-index:90;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain .9s steps(5) infinite}
 @keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-4%,3%)}50%{transform:translate(3%,-5%)}75%{transform:translate(-6%,1%)}100%{transform:translate(0,0)}}
 #prog{position:fixed;top:0;left:0;right:0;height:2px;z-index:80;background:linear-gradient(90deg,var(--purple),var(--lav),var(--gold));transform-origin:left;transform:scaleX(0)}
 
@@ -109,8 +117,8 @@ body.menu #menuBtn .bars i:nth-child(1){top:4px;transform:rotate(45deg)}body.men
 #home{position:relative;height:100svh;min-height:640px;overflow:hidden;background:var(--ink)}
 #home::before{content:'';position:absolute;left:0;right:0;top:0;height:180px;background:linear-gradient(rgba(8,6,15,.8),transparent);z-index:3;pointer-events:none}
 .panels{position:absolute;inset:0;display:flex;gap:2px}
-.panel{position:relative;flex:1;overflow:hidden;transition:flex 1.1s var(--ease);background:radial-gradient(90% 60% at 50% 30%,color-mix(in srgb,var(--c) 55%,transparent),transparent 75%),linear-gradient(180deg,#1b1233,#08060f);clip-path:inset(100% 0 0 0)}
-body.ready .panel{clip-path:inset(0);transition:flex 1.1s var(--ease),clip-path 1.4s var(--ease2)}
+.panel{position:relative;flex:1;overflow:hidden;transition:flex 1.1s var(--ease);background:radial-gradient(90% 60% at 50% 30%,color-mix(in srgb,var(--c) 55%,transparent),transparent 75%),linear-gradient(180deg,#1b1233,#08060f)}
+
 .panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;transition:transform 1.6s var(--ease),filter .9s;filter:saturate(.8) brightness(.72);transform:scale(1.12)}
 body.ready .panel img{transform:scale(1)}
 .panels:hover .panel img{filter:saturate(.5) brightness(.42)}
@@ -180,8 +188,8 @@ h2.title em{font-family:var(--acc);font-weight:400;font-style:italic;color:var(-
 #about .world{border:1px solid var(--line);padding:46px;position:relative;background:linear-gradient(160deg,rgba(138,92,255,.1),transparent 60%);overflow:hidden}
 #about .world::before{content:'';position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;box-shadow:inset -40px 18px 0 0 rgba(201,184,255,.12)}
 #about .world .ui{color:var(--gold)}
-#about .world h4{font-family:var(--disp);font-size:40px;font-weight:500;margin:12px 0 4px;letter-spacing:-.01em}
-#about .world h5{font-size:15px;color:var(--mute);font-weight:500;margin-bottom:22px}
+#about .world h3{font-family:var(--disp);font-size:40px;font-weight:500;margin:12px 0 4px;letter-spacing:-.01em}
+#about .world .h5{font-size:15px;color:var(--mute);font-weight:500;margin-bottom:22px}
 #about .world blockquote{margin-top:28px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--acc);font-style:italic;color:var(--lav);font-size:22px;line-height:1.45}
 #about .world blockquote span{display:block;font-family:var(--kr);font-style:normal;font-size:15px;color:#d8d0f0;margin-top:8px}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:110px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -191,6 +199,7 @@ h2.title em{font-family:var(--acc);font-weight:400;font-style:italic;color:var(-
 .stats span{display:block;margin-top:14px;color:var(--mute);font-size:14px}
 @media(max-width:900px){#about .grid{grid-template-columns:1fr;gap:40px}.stats{grid-template-columns:repeat(2,1fr)}.stats div:nth-child(2){border-right:0}.stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 
+#about,#artists,#business,#vision,#music,#news,#audition,footer{content-visibility:auto;contain-intrinsic-size:auto 1200px}
 /* key visual */
 #kv{height:200vh;background:var(--ink)}
 #kv .pin{position:sticky;top:0;height:100vh;overflow:hidden;display:grid;place-items:center}
@@ -236,7 +245,7 @@ h2.title em{font-family:var(--acc);font-weight:400;font-style:italic;color:var(-
 .acard .debut{position:absolute;right:20px;top:20px;padding:7px 11px;border:1px solid var(--gold);color:var(--gold);background:rgba(8,6,15,.5);z-index:3;font-size:9.5px}
 .dawn{margin-top:22px;border:1px dashed rgba(201,184,255,.3);padding:38px 40px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;transition:border-color .5s,background .5s}
 .dawn:hover{border-color:var(--gold);background:rgba(232,200,115,.05)}
-.dawn h4{font-family:var(--disp);font-size:52px;font-weight:500;font-style:italic;line-height:1}
+.dawn h3{font-family:var(--disp);font-size:52px;font-weight:500;font-style:italic;line-height:1}
 .dawn .ui{color:var(--gold);display:block;margin-bottom:12px;font-size:10px}
 .dawn p{color:#c4bcdc;font-size:15px;margin-top:10px}
 @media(max-width:900px){.unit-head{grid-template-columns:1fr}.cards.n3,.cards.n2{grid-template-columns:1fr}.acard,.cards.n2 .acard{aspect-ratio:4/4.6}}
@@ -319,9 +328,9 @@ h2.title em{font-family:var(--acc);font-weight:400;font-style:italic;color:var(-
 .val{background:#fff;padding:44px 36px;border:1px solid #e1d9f3;position:relative;overflow:hidden;transition:transform .6s var(--ease),box-shadow .6s}
 .val:hover{transform:translateY(-8px);box-shadow:0 40px 70px -40px rgba(80,50,160,.45)}
 .val .ui{color:#8a5cff}
-.val h4{font-family:var(--disp);font-size:34px;font-weight:500;margin:18px 0 6px;letter-spacing:-.01em;line-height:1.05}
-.val h4 em{font-family:var(--acc);font-weight:400}
-.val h5{font-size:15px;color:#6a5a90;margin-bottom:18px;font-weight:600}
+.val h3{font-family:var(--disp);font-size:34px;font-weight:500;margin:18px 0 6px;letter-spacing:-.01em;line-height:1.05}
+.val h3 em{font-family:var(--acc);font-weight:400}
+.val .h5{font-size:15px;color:#6a5a90;margin-bottom:18px;font-weight:600}
 .val p{font-size:15px;line-height:1.85;color:#4a4064}
 .val .big{position:absolute;right:18px;top:6px;font-family:var(--disp);font-style:italic;font-size:110px;line-height:1;color:#f0ebfa}
 .road{margin-top:130px}
@@ -354,7 +363,7 @@ h2.title em{font-family:var(--acc);font-weight:400;font-style:italic;color:var(-
 .ev .yr{font-family:var(--disp);font-style:italic;font-size:86px;line-height:.85;color:transparent;-webkit-text-stroke:1px rgba(201,184,255,.55)}
 .ev .yr small{font-family:var(--ui);font-style:normal;font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--lav);-webkit-text-stroke:0;margin-left:10px}
 .ev .ui{color:var(--gold);margin-top:26px;font-size:10px}
-.ev h4{font-size:24px;margin:12px 0 12px;line-height:1.35;font-weight:700;letter-spacing:-.035em}
+.ev h3{font-size:24px;margin:12px 0 12px;line-height:1.35;font-weight:700;letter-spacing:-.035em}
 .ev p{color:#c4bcdc;line-height:1.85;font-size:14.5px}
 .ev .fig{display:flex;gap:26px;margin-top:auto;padding-top:22px;flex-wrap:wrap}
 .ev .fig span{font-size:12px;color:var(--mute)}
@@ -387,7 +396,7 @@ h2.title em{font-family:var(--acc);font-weight:400;font-style:italic;color:var(-
 .rel:hover .art .play,.rel.playing .art .play{opacity:1}
 .rel .meta{margin-top:18px}
 .rel .meta .ui{color:var(--lav);font-size:9.5px}
-.rel .meta h4{font-family:var(--disp);font-size:24px;font-weight:500;margin:8px 0 6px;line-height:1.1}
+.rel .meta h3{font-family:var(--disp);font-size:24px;font-weight:500;margin:8px 0 6px;line-height:1.1}
 .rel ol{margin-top:10px;padding-left:18px;font-size:13px;color:#bdb5d6;line-height:1.9}
 @media(max-width:1000px){.rels{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.rels{grid-template-columns:1fr}}
@@ -419,7 +428,7 @@ h2.title em{font-family:var(--acc);font-weight:400;font-style:italic;color:var(-
 .aud-hero p{max-width:640px;margin:26px auto 0;color:#cfc8e6;line-height:1.95;font-size:16.5px}
 .aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:90px}
 .aud-grid div{border:1px solid var(--line);padding:34px}
-.aud-grid h4{color:var(--gold);margin-bottom:18px}
+.aud-grid h3{color:var(--gold);margin-bottom:18px}
 .aud-grid li{list-style:none;padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:#d0c9e8;line-height:1.6}
 .aud-grid li:last-child{border:0}
 .aud-steps{display:flex;margin-top:22px;border:1px solid var(--line)}
@@ -465,7 +474,8 @@ footer{border-top:1px solid var(--line);background:#06040b}
 #toTop.on{opacity:1;pointer-events:auto}
 #toTop svg{position:absolute;inset:0;transform:rotate(-90deg)}
 #toTop span{font-family:var(--disp);font-size:18px}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}#fog{display:none}}
+@media(max-width:700px){.grain{animation:none}}
 </style>
 </head>
 <body class="lock">
@@ -476,13 +486,13 @@ footer{border-top:1px solid var(--line);background:#06040b}
 <div id="loader"><div class="h t"></div><div class="h b"></div><div class="in"><div class="lg"><img src="assets/logo-emblem.svg" alt=""><div class="pc"><span id="pcN">0</span><sup>%</sup></div><div class="nm ui">Nightmare Records</div></div></div></div>
 
 <header id="hdr">
-  <a href="#home" class="logo" aria-label="NIGHTMARE RECORDS 홈"><img src="assets/logo-emblem.svg" alt=""><b>NIGHTMARE<small>RECORDS</small></b></a>
+  <a href="#home" class="logo"><img src="assets/logo-emblem.svg" alt=""><b>NIGHTMARE<small>RECORDS</small></b></a>
   <nav class="top"><ul class="ui">
     <li><a href="#about">About</a></li><li><a href="#artists">Artists</a></li><li><a href="#business">Business</a></li><li><a href="#vision">Vision</a></li><li><a href="#story">Story</a></li><li><a href="#music">Music</a></li><li><a href="#audition">Audition</a></li>
   </ul></nav>
   <div class="tools">
-    <button class="chip" id="sndBtn" aria-label="배경음악"><span class="eq" id="eq"><i></i><i></i><i></i><i></i></span><span class="ui sl" id="sndLbl">Sound off</span></button>
-    <button class="chip" id="menuBtn" aria-label="메뉴"><span class="ui sl">Menu</span><span class="bars"><i></i><i></i></span></button>
+    <button class="chip" id="sndBtn" title="배경음악 / 미리 듣기"><span class="eq" id="eq"><i></i><i></i><i></i><i></i></span><span class="ui sl" id="sndLbl">Sound off</span></button>
+    <button class="chip" id="menuBtn" title="메뉴"><span class="ui sl">Menu</span><span class="bars"><i></i><i></i></span></button>
   </div>
 </header>
 
@@ -519,7 +529,7 @@ footer{border-top:1px solid var(--line);background:#06040b}
     </div>
     <div class="world rv d2">
       <div class="ui">Worldview</div>
-      <h4>Nightfall</h4><h5>나이트폴 — 인간이 잠든 밤에만 열리는 도시</h5>
+      <h3>Nightfall</h3><p class="h5">나이트폴 — 인간이 잠든 밤에만 열리는 도시</p>
       <p class="body">사람들의 꿈과 악몽이 모여 만들어진 이곳에는 잊힌 괴물과 전설 속 존재들이 살고 있습니다. 이들은 사람들의 기억에서 지워질수록 힘을 잃고 희미해집니다.</p>
       <p class="body" style="margin-top:14px">어느 밤, 현실과 나이트폴의 경계가 열렸고 우연히 한 무대에 선 존재들은 깨닫습니다. 자신들의 노래가 두 세계를 잇는다는 것을. 노래가 불릴수록 경계는 안정되고, 이름이 불릴수록 잊힌 존재들은 다시 빛을 되찾습니다.</p>
       <blockquote>“As long as you call our names, this night never ends.”<span>당신이 우리의 이름을 부르는 한, 이 밤은 끝나지 않아.</span></blockquote>
@@ -535,7 +545,7 @@ footer{border-top:1px solid var(--line);background:#06040b}
 
 <section id="kv"><div class="pin">
   <div class="pre">All artists</div>
-  <div class="frame" id="kvFrame"><img src="assets/group-kv.webp" alt="NIGHTMARE RECORDS 전체 아티스트 단체 키비주얼"></div>
+  <div class="frame" id="kvFrame"><img src="assets/group-kv.webp" srcset="assets/group-kv-1200.webp 1200w, assets/group-kv.webp 2200w" sizes="100vw" alt="NIGHTMARE RECORDS 전체 아티스트 단체 키비주얼" loading="lazy" decoding="async"></div>
   <div class="cap"><div class="ui">Nightmare Records · All artists</div><b>Five curses, <em>one stage.</em></b><div class="names ui"><a href="#artist-sien">Sien</a><a href="#artist-veil">Veil</a><a href="#artist-mob">Mob</a><a href="#artist-milla">Milla</a><a href="#artist-rue">Rue</a></div></div>
 </div></section>
 
@@ -611,9 +621,9 @@ footer{border-top:1px solid var(--line);background:#06040b}
     <p class="rv">밤의 끝, 모든 저주가 풀리는 새벽을 함께 맞이할 세 번째 아티스트를 찾습니다. 완벽한 실력보다, 당신만의 목소리와 이야기가 더 중요합니다.</p>
   </div>
   <div class="aud-grid">
-    <div class="rv"><h4 class="ui">Who we look for</h4><ul><li>노래·랩·춤 중 하나 이상에 자신 있는 분</li><li>주 3회 이상 라이브 방송이 가능한 분</li><li>자신만의 캐릭터와 이야기를 함께 만들고 싶은 분</li><li>만 19세 이상, 국적·성별 무관</li></ul></div>
-    <div class="rv d1"><h4 class="ui">We support</h4><ul><li>전속 일러스트·Live2D·3D 모델 제작</li><li>보컬·댄스·방송 트레이닝</li><li>오리지널 곡과 뮤직비디오 제작</li><li>모션캡처 스튜디오 ‘THE CRYPT’ 이용</li></ul></div>
-    <div class="rv d2"><h4 class="ui">Schedule</h4><ul><li>서류 접수 · 2026.11.13 – 12.31</li><li>1차 영상 심사 · 2027.01</li><li>2차 화상 면접 · 2027.02</li><li>최종 발표 · 2027.03 (개별 안내)</li></ul></div>
+    <div class="rv"><h3 class="ui">Who we look for</h3><ul><li>노래·랩·춤 중 하나 이상에 자신 있는 분</li><li>주 3회 이상 라이브 방송이 가능한 분</li><li>자신만의 캐릭터와 이야기를 함께 만들고 싶은 분</li><li>만 19세 이상, 국적·성별 무관</li></ul></div>
+    <div class="rv d1"><h3 class="ui">We support</h3><ul><li>전속 일러스트·Live2D·3D 모델 제작</li><li>보컬·댄스·방송 트레이닝</li><li>오리지널 곡과 뮤직비디오 제작</li><li>모션캡처 스튜디오 ‘THE CRYPT’ 이용</li></ul></div>
+    <div class="rv d2"><h3 class="ui">Schedule</h3><ul><li>서류 접수 · 2026.11.13 – 12.31</li><li>1차 영상 심사 · 2027.01</li><li>2차 화상 면접 · 2027.02</li><li>최종 발표 · 2027.03 (개별 안내)</li></ul></div>
   </div>
   <div class="aud-steps rv"><div><small class="ui">Step 01</small><b>서류 · 자기소개</b></div><div><small class="ui">Step 02</small><b>보이스 · 퍼포먼스 영상</b></div><div><small class="ui">Step 03</small><b>화상 면접</b></div><div><small class="ui">Step 04</small><b>캐릭터 협의 · 계약</b></div></div>
   <div style="text-align:center"><span class="mag"><button class="cta ui rv" data-doc="audition" data-cursor="Apply">Apply now →</button></span></div>
@@ -647,7 +657,7 @@ footer{border-top:1px solid var(--line);background:#06040b}
 <script>
 (()=>{
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-const IMG=id=>`assets/${id}.webp`;
+const IMG=id=>`assets/${id}.webp`,IMS=id=>`assets/${id}-600.webp`,SET=id=>`srcset="assets/${id}-600.webp 600w, assets/${id}.webp 1000w"`;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),lerp=(a,b,t)=>a+(b-a)*t;
 const FINE=matchMedia('(hover:hover) and (pointer:fine)').matches;
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -679,13 +689,13 @@ const U=[
 ];
 
 /* ================= RENDER ================= */
-$('#panels').innerHTML=A.map(a=>`<a href="#artist-${a.id}" class="panel" style="--c:${a.c}" data-cursor="View"><img src="${IMG(a.id)}" alt="${a.name}"><span class="vn">${a.name}<small>${a.unit}</small></span><span class="cap"><b>${a.en}</b><span>${a.kr} · ${a.pos.join(' · ')}</span></span></a>`).join('');
+$('#panels').innerHTML=A.map(a=>`<a href="#artist-${a.id}" class="panel" style="--c:${a.c}" data-cursor="View"><img src="${IMG(a.id)}" ${SET(a.id)} sizes="(max-width:700px) 600px, 45vw" alt="" decoding="async" fetchpriority="high"><span class="vn">${a.name}<small>${a.unit}</small></span><span class="cap"><b>${a.en}</b><span>${a.kr} · ${a.pos.join(' · ')}</span></span></a>`).join('');
 const mqI=['The Sweetest Nightmare','MOB','VEIL','SIEN','RUE','MILLA','3 curses, 1 stage','Nightfall'];
 $('#mq').innerHTML=[...mqI,...mqI].map((x,i)=>`<span class="${['','o','i'][i%3]}">${x}</span><img src="assets/logo-emblem.svg" alt="">`).join('');
 $('#units').innerHTML=U.map(u=>`<div class="unit">
  <div class="unit-head rv"><div><span class="ui">${u.gen} · ${u.debut}</span><h3>${u.id}</h3></div><p><b>${u.tag}</b>${u.desc}</p></div>
- <div class="cards n${u.m.length}">${u.m.map((id,i)=>{const a=byId[id];return `<a href="#artist-${id}" class="acard rv d${i}" style="--c:${a.c}" data-cursor="View"><div class="bar"></div><div class="bigname">${a.name}</div><img class="fade" src="${IMG(id)}" alt="${a.name}" loading="lazy"><div class="holo"></div>${u.id==='MIDNIGHT'?'<span class="debut ui">D-day 11.13</span>':''}<div class="info"><div class="ui">${a.sp}</div><div class="nm">${a.name}</div><div class="kn">${a.kr} · ${a.pos.join(' · ')}</div></div></a>`}).join('')}</div>
-</div>`).join('')+`<a class="dawn rv" href="#audition" data-cursor="Join"><div><span class="ui">3rd generation · Audition open</span><h4>Dawn</h4><p>밤의 끝을 함께 맞이할 당신을 기다립니다.</p></div><span class="cta ui" style="margin:0">View audition →</span></a>`;
+ <div class="cards n${u.m.length}">${u.m.map((id,i)=>{const a=byId[id];return `<a href="#artist-${id}" class="acard rv d${i}" style="--c:${a.c}" data-cursor="View"><div class="bar"></div><div class="bigname">${a.name}</div><img class="fade" src="${IMG(id)}" ${SET(id)} sizes="(max-width:900px) 90vw, 32vw" alt="${a.name}" loading="lazy" decoding="async"><div class="holo"></div>${u.id==='MIDNIGHT'?'<span class="debut ui">D-day 11.13</span>':''}<div class="info"><div class="ui">${a.sp}</div><div class="nm">${a.name}</div><div class="kn">${a.kr} · ${a.pos.join(' · ')}</div></div></a>`}).join('')}</div>
+</div>`).join('')+`<a class="dawn rv" href="#audition" data-cursor="Join"><div><span class="ui">3rd generation · Audition open</span><h3>Dawn</h3><p>밤의 끝을 함께 맞이할 당신을 기다립니다.</p></div><span class="cta ui" style="margin:0">View audition →</span></a>`;
 
 const BIZ=[
  ['Artist Management','아티스트 매니지먼트','캐릭터 디자인부터 세계관 설정, 목소리와 성격까지 — 아티스트 한 명을 하나의 IP로 설계하고, 데뷔 이후의 성장 서사를 장기적으로 관리합니다.',['캐릭터·세계관 설계','Live2D·3D 모델','트레이닝','아티스트 케어'],'veil'],
@@ -695,7 +705,7 @@ const BIZ=[
 ];
 $('#bizList').innerHTML=BIZ.map((b,i)=>`<div class="biz rv" data-img="${b[4]}"><div class="no">0${i+1}</div><h3>${b[0]}<small>${b[1]}</small></h3><div><p>${b[2]}</p><ul>${b[3].map(x=>`<li>${x}</li>`).join('')}</ul></div></div>`).join('');
 const VAL=[['Curse <em>to</em> Charm','저주를 매력으로','약점과 결핍은 숨길 것이 아니라 캐릭터의 가장 큰 매력입니다. 우리는 완벽한 아이돌이 아니라, 결점까지 사랑받는 아티스트를 만듭니다.'],['Night, <em>Together</em>','밤은 함께 걷는 것','세계관은 회사가 완성하지 않습니다. 팬이 이름을 부르고, 클립을 만들고, 이야기를 이어 갈 때 비로소 완성됩니다.'],['Real <em>Stage</em>','진짜 무대','화면 속 존재라도 무대는 진짜여야 합니다. 라이브 사운드, 모션캡처, 오프라인 공연까지 아티스트가 실제로 서는 무대를 만듭니다.']];
-$('#values').innerHTML=VAL.map((v,i)=>`<div class="val rv d${i}"><span class="big">${['i','ii','iii'][i]}</span><div class="ui">Value 0${i+1}</div><h4>${v[0]}</h4><h5>${v[1]}</h5><p>${v[2]}</p></div>`).join('');
+$('#values').innerHTML=VAL.map((v,i)=>`<div class="val rv d${i}"><span class="big">${['i','ii','iii'][i]}</span><div class="ui">Value 0${i+1}</div><h3>${v[0]}</h3><p class="h5">${v[1]}</p><p>${v[2]}</p></div>`).join('');
 /* mission words */
 const MW=[['잊힌'],['존재에게는'],['무대를,',1],['\n'],['당신의'],['밤에는'],['이야기를.',1]];
 $('#mission').innerHTML=MW.map(([w,h])=>w==='\n'?'<br>':`<span class="w${h?' hl':''}">${w}</span> `).join('');
@@ -713,7 +723,7 @@ const TL=[
  ['2026','10','Concert','첫 콘서트 〈Endless Halloween〉','할로윈 밤, 온·오프라인 하이브리드 콘서트와 1st 미니앨범 동시 발매. 공연장과 온라인을 합쳐 2만 명이 함께했다.',[['2만','관객']]],
  ['2026','11','Now','2기 유닛 MIDNIGHT 공개','유령 RUE와 뱀파이어 MILLA. 11월 13일 금요일, 가장 깊은 밤이 시작된다. 동시에 3기 ‘DAWN’ 오디션이 열린다.']
 ];
-$('#track').innerHTML=TL.map((t,i)=>`<div class="ev${i===TL.length-1?' now':''}"><div class="yr">${t[0]}<small>${t[1]}</small></div><div class="ui">${t[2]}</div><h4>${t[3]}</h4><p>${t[4]}</p>${t[5]?`<div class="fig">${t[5].map(f=>`<span><b>${f[0]}</b>${f[1]}</span>`).join('')}</div>`:''}</div>`).join('');
+$('#track').innerHTML=TL.map((t,i)=>`<div class="ev${i===TL.length-1?' now':''}"><div class="yr">${t[0]}<small>${t[1]}</small></div><div class="ui">${t[2]}</div><h3>${t[3]}</h3><p>${t[4]}</p>${t[5]?`<div class="fig">${t[5].map(f=>`<span><b>${f[0]}</b>${f[1]}</span>`).join('')}</div>`:''}</div>`).join('');
 $('#stTot').textContent=TL.length;
 
 const REL=[
@@ -722,7 +732,7 @@ const REL=[
  {t:'Bandage Lullaby',a:'MOB',type:'Solo digital',d:'2026.09.03',bg:'linear-gradient(160deg,#5c5b86,#16142a)',img:'mob',pos:'-14%',rc:'#cfd0f0',tr:['Bandage Lullaby','Bandage Lullaby (Acoustic)'],m:{bpm:76,ch:[[52,55,59],[48,52,55],[53,57,60],[50,53,57]],beat:0}},
  {t:'Fade Out, Bite In',a:'MIDNIGHT',type:'Debut single',d:'2026.11.13',bg:'linear-gradient(160deg,#6b5320,#1a0f14)',img:'milla',pos:'-6%',rc:'#e8c873',soon:1,tr:['Fade Out, Bite In','Echo of the Opera'],m:{bpm:96,ch:[[49,52,56],[45,49,52],[47,51,54],[44,47,51]],beat:1}}
 ];
-$('#rels').innerHTML=REL.map((r,i)=>`<div class="rel rv d${i%4}" data-r="${i}" style="--rc:${r.rc}"><div class="sleeve" data-cursor="Play"><div class="vinyl"><i></i></div><div class="art"><div class="bg" style="background:${r.bg}"></div><img src="${IMG(r.img)}" alt="" style="left:${r.pos}" loading="lazy">${r.soon?'<span class="soon ui">Coming soon</span>':''}<span class="play">▶</span><div class="lbl"><small>${r.a}</small>${r.t}</div></div></div><div class="meta"><span class="ui">${r.type} · ${r.d}</span><h4>${r.t}</h4><ol>${r.tr.map(x=>`<li>${x}</li>`).join('')}</ol></div></div>`).join('');
+$('#rels').innerHTML=REL.map((r,i)=>`<div class="rel rv d${i%4}" data-r="${i}" style="--rc:${r.rc}"><div class="sleeve" data-cursor="Play"><div class="vinyl"><i></i></div><div class="art"><div class="bg" style="background:${r.bg}"></div><img src="${IMS(r.img)}" alt="" style="left:${r.pos}" loading="lazy" decoding="async">${r.soon?'<span class="soon ui">Coming soon</span>':''}<span class="play">▶</span><div class="lbl"><small>${r.a}</small>${r.t}</div></div></div><div class="meta"><span class="ui">${r.type} · ${r.d}</span><h3>${r.t}</h3><ol>${r.tr.map(x=>`<li>${x}</li>`).join('')}</ol></div></div>`).join('');
 
 const NEWS=[
  ['2026.11.01','Artist','2기 유닛 MIDNIGHT (RUE · MILLA) 데뷔 안내','<p>나이트메어 레코즈의 두 번째 유닛 <b>MIDNIGHT</b>가 2026년 11월 13일(금) 21:00, 공식 유튜브 채널에서 데뷔 방송을 진행합니다.</p><ul><li>RUE (루) — 유령 · 리드 보컬</li><li>MILLA (밀라) — 뱀파이어 · 리더, 메인 보컬</li></ul><p>데뷔 싱글 〈Fade Out, Bite In〉은 같은 날 18:00 각 음원 사이트에서 공개됩니다. 많은 관심 부탁드립니다.</p>'],
@@ -744,7 +754,7 @@ const DOCS={
 $('#fbig').innerHTML=[...'NIGHTMARE'].map(c=>`<span>${c}</span>`).join('');
 const MENU=[['Home','#home'],['About','#about'],['Artists','#artists'],['Vision','#vision'],['Story','#story'],['Music','#music'],['News','#news'],['Audition','#audition']];
 $('#menuList').innerHTML=MENU.map((m,i)=>`<li><a href="${m[1]}" data-pv="${A[i%5].id}" style="transition-delay:${.08+i*.05}s"><small>0${i+1}</small>${m[0]}</a></li>`).join('');
-$('#menuPv').insertAdjacentHTML('afterbegin',A.map(a=>`<img src="${IMG(a.id)}" data-id="${a.id}" alt="">`).join(''));
+$('#menuPv').insertAdjacentHTML('afterbegin',A.map(a=>`<img src="${IMG(a.id)}" data-id="${a.id}" alt="" loading="lazy" decoding="async">`).join(''));
 
 /* D-day */
 (function(){const t=new Date('2026-11-13T21:00:00+09:00'),d=Math.ceil((t-new Date())/864e5);$('#dday').textContent=d>0?'D-'+d:d===0?'D-day':'On air'})();
@@ -769,7 +779,7 @@ function play(i){if(!sInit())return;const r=REL[i];cur=r;S.ctx.resume();step=0;n
  clearInterval(S.timer);S.timer=setInterval(sched,40);
  $$('.rel').forEach(e=>e.classList.toggle('playing',+e.dataset.r===i));
  $('#plT').textContent=r.t;$('#plA').textContent=r.a+' · Preview';$('#player').style.setProperty('--pc',r.rc);$('#player').classList.add('on');$('#sndLbl').textContent='Sound on'}
-function stop(){if(!S.ctx)return;S.on=false;S.out.gain.setTargetAtTime(0,S.ctx.currentTime,.25);setTimeout(()=>{if(!S.on)clearInterval(S.timer)},900);$$('.rel').forEach(e=>e.classList.remove('playing'));$('#player').classList.remove('on');$('#sndLbl').textContent='Sound off'}
+function stop(){$$('#eq i').forEach(e=>e.style.height='3px');if(!S.ctx)return;S.on=false;S.out.gain.setTargetAtTime(0,S.ctx.currentTime,.25);setTimeout(()=>{if(!S.on)clearInterval(S.timer)},900);$$('.rel').forEach(e=>e.classList.remove('playing'));$('#player').classList.remove('on');$('#sndLbl').textContent='Sound off'}
 function sched(){if(!cur)return;const c=S.ctx,m=cur.m,st=60/m.bpm/2;
  while(nextT<c.currentTime+.15){const bar=Math.floor(step/8)%m.ch.length,ch=m.ch[bar],t=nextT;
   if(step%8===0)ch.forEach(n=>[-7,7].forEach(d=>{const o=tone(mtof(n),t,st*9,'sawtooth',.03);o.detune.value=d}));
@@ -786,7 +796,7 @@ $('#sndBtn').addEventListener('click',()=>S.on?stop():play(0));
 const ap=$('#ap'),curtain=$('#apCurtain');
 function openArtist(id){const a=byId[id];if(!a)return;const i=A.indexOf(a),prev=A[(i+4)%5],next=A[(i+1)%5];
  const build=()=>{ap.style.setProperty('--c',a.c);
- $('#apIn').innerHTML=`<section class="ap-hero"><div class="huge"><span>${a.name}</span><span>${a.name}</span><span>${a.name}</span><span>${a.name}</span></div><div class="pic"><img class="fade" src="${IMG(a.id)}" alt="${a.name}" id="apImg"></div>
+ $('#apIn').innerHTML=`<section class="ap-hero"><div class="huge"><span>${a.name}</span><span>${a.name}</span><span>${a.name}</span><span>${a.name}</span></div><div class="pic"><img class="fade" decoding="async" src="${IMG(a.id)}" alt="${a.name}" id="apImg"></div>
  <div class="txt"><div class="ui">${a.unit} · ${a.sp}</div><h2>${a.name}</h2><div class="kn">${a.kr}</div><p class="q">${a.q}</p><div class="pos">${a.pos.map(p=>`<span>${p}</span>`).join('')}</div></div></section>
  <div class="ap-body"><div class="story"><h3>Story</h3>${a.story.map(p=>`<p>${p}</p>`).join('')}<h3 style="margin-top:56px">TMI</h3><ul class="tmi">${a.tmi.map((t,k)=>`<li data-n="0${k+1}">${t}</li>`).join('')}</ul></div>
   <div><h3>Profile</h3><dl class="prof"><div><dt>Unit</dt><dd>${a.unit}</dd></div><div><dt>Species</dt><dd>${a.sp}</dd></div><div><dt>Age</dt><dd>${a.age}</dd></div><div><dt>Height</dt><dd>${a.h}</dd></div><div><dt>Birthday</dt><dd>${a.bd}</dd></div><div><dt>Color</dt><dd><span class="sw"></span>${a.colorName}</dd></div><div><dt>Symbol</dt><dd>${a.sym}</dd></div><div><dt>Fandom</dt><dd>${a.fan}</dd></div></dl>
@@ -829,7 +839,7 @@ if(FINE){document.addEventListener('pointerover',e=>{const l=e.target.closest('[
  document.addEventListener('pointerleave',()=>document.body.classList.remove('cur'));
  $$('.mag').forEach(m=>{m.addEventListener('pointermove',e=>{const b=m.getBoundingClientRect();m.style.transform=`translate(${(e.clientX-b.left-b.width/2)*.25}px,${(e.clientY-b.top-b.height/2)*.35}px)`});m.addEventListener('pointerleave',()=>m.style.transform='')});
  $$('.acard').forEach(c=>{c.addEventListener('pointermove',e=>{const b=c.getBoundingClientRect(),x=(e.clientX-b.left)/b.width,y=(e.clientY-b.top)/b.height;c.style.transform=`rotateY(${(x-.5)*10}deg) rotateX(${(.5-y)*10}deg)`;c.style.setProperty('--hx',x*100+'%');c.style.setProperty('--hy',y*100+'%')});c.addEventListener('pointerleave',()=>c.style.transform='')});
- const bi=$('#bizImg');$$('.biz').forEach(b=>{b.addEventListener('pointerenter',()=>{bi.firstElementChild.src=IMG(b.dataset.img);bi.classList.add('on')});b.addEventListener('pointerleave',()=>bi.classList.remove('on'))});
+ const bi=$('#bizImg');$$('.biz').forEach(b=>{b.addEventListener('pointerenter',()=>{bi.firstElementChild.src=IMS(b.dataset.img);bi.classList.add('on')});b.addEventListener('pointerleave',()=>bi.classList.remove('on'))});
 }
 $('#home').addEventListener('pointermove',e=>{const s=$('#spot');s.style.setProperty('--mx',e.clientX+'px');s.style.setProperty('--my',e.clientY+'px')});
 
@@ -844,41 +854,42 @@ const cv=$('#fog'),cx=cv.getContext('2d'),DPR=Math.min(devicePixelRatio||1,1.5);
 function sizeFog(){cv.width=cv.clientWidth*DPR;cv.height=cv.clientHeight*DPR;P=Array.from({length:innerWidth<700?40:90},()=>({x:Math.random()*cv.width,y:Math.random()*cv.height,r:(Math.random()*1.5+.3)*DPR,v:(Math.random()*.3+.05)*DPR,a:Math.random()*6.28}))}
 
 /* ================= SCROLL SCENES ================= */
-const hdr=$('#hdr'),prog=$('#prog'),toTop=$('#toTop'),ttRing=$('#ttRing'),mqEl=$('#mq');
-const kv=$('#kv'),kvFrame=$('#kvFrame'),story=$('#story'),track=$('#track'),tlBar=$('#tlBar'),mission=$('#mission'),fbs=$$('.fbig span');
-let heroVis=true;new IntersectionObserver(e=>heroVis=e[0].isIntersecting).observe($('#home'));
-let lastY=0,vel=0,mqX=0,mqDir=-1,stIdx=-1;
-function sizeStory(){if(innerWidth<=900){story.style.height='auto';return}story.style.height=(track.scrollWidth-innerWidth+innerHeight*1.15)+'px'}
+const hdr=$('#hdr'),prog=$('#prog'),toTop=$('#toTop'),ttRing=$('#ttRing'),mqEl=$('#mq'),bizI=$('#bizImg'),eqs=$$('#eq i'),stCnt=$('#stCnt');
+const kv=$('#kv'),kvFrame=$('#kvFrame'),story=$('#story'),track=$('#track'),tlBar=$('#tlBar'),mission=$('#mission');
+const V={hero:true};[['hero','#home'],['mq','.marquee'],['kv','#kv'],['mis','#mission'],['st','#story']].forEach(([k,sel])=>new IntersectionObserver(e=>V[k]=e[0].isIntersecting,{rootMargin:'120px'}).observe($(sel)));
+let lastY=-1,vel=0,mqX=0,mqDir=-1,stIdx=-1,fc=0,mqHalf=0,stW=0;
+function sizeStory(){mqHalf=mqEl.scrollWidth/2;stW=track.scrollWidth-innerWidth;lastY=-1;if(innerWidth<=900){story.style.height='auto';return}story.style.height=(stW+innerHeight*1.15)+'px'}
+function scenes(y){
+ if(V.kv){const r=kv.getBoundingClientRect(),k=clamp(-r.top/(kv.offsetHeight-innerHeight),0,1),e=1-Math.pow(1-clamp(k*1.4,0,1),3);
+  kvFrame.style.setProperty('--ci',(14*(1-e)).toFixed(2)+'%');kvFrame.style.setProperty('--cx',(22*(1-e)).toFixed(2)+'%');kvFrame.style.setProperty('--cr',(24*(1-e)).toFixed(1)+'px');kvFrame.style.setProperty('--ks',(1.25-.25*e).toFixed(3));kv.style.setProperty('--co',clamp((k-.45)*3,0,1).toFixed(3))}
+ if(V.mis){const r=mission.getBoundingClientRect(),k=clamp((innerHeight*.85-r.top)/(innerHeight*.6),0,1);mWords.forEach((w,i)=>w.style.opacity=clamp(k*mWords.length-i+.15,.14,1))}
+ if(V.st&&innerWidth>900){const r=story.getBoundingClientRect(),k=clamp(-r.top/(story.offsetHeight-innerHeight),0,1);track.style.transform=`translate3d(${(-stW*k).toFixed(1)}px,0,0)`;tlBar.style.transform=`scaleX(${k.toFixed(4)})`;const idx=Math.min(TL.length-1,Math.round(k*(TL.length-1)));if(idx!==stIdx){stIdx=idx;stCnt.textContent=String(idx+1).padStart(2,'0')}}
+}
 function frame(t){
- if(lenis)lenis.raf(t);
- const y=lenis?lenis.scroll:scrollY,H=document.documentElement.scrollHeight-innerHeight;
- const d=y-lastY;vel=lerp(vel,d,.1);if(Math.abs(d)>.5)mqDir=d>0?-1:1;
- hdr.classList.toggle('solid',y>60);hdr.classList.toggle('hide',d>4&&y>innerHeight&&!document.body.classList.contains('menu'));if(d<-3)hdr.classList.remove('hide');lastY=y;
- const p=H>0?y/H:0;prog.style.transform=`scaleX(${p})`;toTop.classList.toggle('on',y>innerHeight);ttRing.style.strokeDashoffset=157*(1-p);
- mqX+=(1+Math.abs(vel)*.25)*mqDir;const half=mqEl.scrollWidth/2;if(mqX<-half)mqX+=half;if(mqX>0)mqX-=half;mqEl.style.transform=`translate3d(${mqX}px,0,0) skewX(${clamp(-vel*.25,-8,8)}deg)`;
- rx=lerp(rx,mx,.16);ry=lerp(ry,my,.16);dot.style.transform=`translate(${mx}px,${my}px)`;ring.style.transform=`translate(${rx}px,${ry}px)`;
- const bi=$('#bizImg');bi.style.left=(rx+30)+'px';bi.style.top=(ry-160)+'px';
- if(heroVis){cx.clearRect(0,0,cv.width,cv.height);cx.fillStyle='#e6dcff';for(const q of P){q.y-=q.v;q.x+=Math.sin(t/2000+q.a)*.3;if(q.y<-5){q.y=cv.height+5;q.x=Math.random()*cv.width}cx.globalAlpha=.3+.35*Math.sin(t/700+q.a);cx.beginPath();cx.arc(q.x,q.y,q.r,0,7);cx.fill()}cx.globalAlpha=1}
- /* key visual */
- {const r=kv.getBoundingClientRect(),k=clamp(-r.top/(kv.offsetHeight-innerHeight),0,1),e=1-Math.pow(1-clamp(k*1.4,0,1),3);
-  kvFrame.style.setProperty('--ci',(14*(1-e))+'%');kvFrame.style.setProperty('--cx',(22*(1-e))+'%');kvFrame.style.setProperty('--cr',(24*(1-e))+'px');kvFrame.style.setProperty('--ks',(1.25-.25*e).toFixed(3));kv.style.setProperty('--co',clamp((k-.45)*3,0,1).toFixed(3))}
- /* mission words */
- {const r=mission.getBoundingClientRect(),k=clamp((innerHeight*.85-r.top)/(innerHeight*.6),0,1);mWords.forEach((w,i)=>w.style.opacity=clamp(k*mWords.length-i+.15,.14,1))}
- /* story horizontal */
- if(innerWidth>900){const r=story.getBoundingClientRect(),k=clamp(-r.top/(story.offsetHeight-innerHeight),0,1);track.style.transform=`translate3d(${-(track.scrollWidth-innerWidth)*k}px,0,0)`;tlBar.style.transform=`scaleX(${k})`;const idx=Math.min(TL.length-1,Math.round(k*(TL.length-1)));if(idx!==stIdx){stIdx=idx;$('#stCnt').textContent=String(idx+1).padStart(2,'0')}}
- /* eq */
- if(S.on&&S.an){S.an.getByteFrequencyData(S.data);$$('#eq i').forEach((e,i)=>e.style.height=(3+S.data[i*3+1]/255*10)+'px')}else $$('#eq i').forEach((e,i)=>e.style.height=(3+Math.abs(Math.sin(t/400+i))*2)+'px');
+ if(lenis)lenis.raf(t);fc++;
+ const y=lenis?lenis.scroll:scrollY,d=lastY<0?0:y-lastY;
+ vel=lerp(vel,d,.1);
+ if(lastY<0||Math.abs(d)>.1){const H=document.documentElement.scrollHeight-innerHeight;if(Math.abs(d)>.5)mqDir=d>0?-1:1;
+  hdr.classList.toggle('solid',y>60);if(d>4&&y>innerHeight&&!document.body.classList.contains('menu'))hdr.classList.add('hide');else if(d<-3)hdr.classList.remove('hide');
+  const p=H>0?y/H:0;prog.style.transform=`scaleX(${p.toFixed(4)})`;toTop.classList.toggle('on',y>innerHeight);ttRing.style.strokeDashoffset=(157*(1-p)).toFixed(1);
+  scenes(y);lastY=y}
+ if(V.mq&&!RM){mqX+=(1+Math.abs(vel)*.25)*mqDir;if(mqX<-mqHalf)mqX+=mqHalf;if(mqX>0)mqX-=mqHalf;mqEl.style.transform=`translate3d(${mqX.toFixed(1)}px,0,0) skewX(${clamp(-vel*.25,-8,8).toFixed(2)}deg)`}
+ if(FINE&&document.body.classList.contains('cur')){rx=lerp(rx,mx,.16);ry=lerp(ry,my,.16);dot.style.transform=`translate(${mx}px,${my}px)`;ring.style.transform=`translate(${rx.toFixed(1)}px,${ry.toFixed(1)}px)`;
+  if(bizI.classList.contains('on')){bizI.style.left=(rx+30).toFixed(0)+'px';bizI.style.top=(ry-160).toFixed(0)+'px'}}
+ if(V.hero&&!RM&&!document.body.classList.contains('lock')&&fc%2===0){cx.clearRect(0,0,cv.width,cv.height);cx.fillStyle='#e6dcff';for(const q of P){q.y-=q.v*2;q.x+=Math.sin(t/2000+q.a)*.6;if(q.y<-5){q.y=cv.height+5;q.x=Math.random()*cv.width}cx.globalAlpha=.3+.35*Math.sin(t/700+q.a);cx.beginPath();cx.arc(q.x,q.y,q.r,0,7);cx.fill()}cx.globalAlpha=1}
+ if(S.on&&S.an&&fc%2===0){S.an.getByteFrequencyData(S.data);eqs.forEach((e,i)=>e.style.height=(3+S.data[i*3+1]/255*10).toFixed(1)+'px')}
  requestAnimationFrame(frame);
 }
 toTop.addEventListener('click',()=>{history.replaceState(null,'','#home');go('#home')});
 function resize(){sizeFog();sizeStory()}
 addEventListener('resize',resize);resize();
 document.fonts&&document.fonts.ready.then(sizeStory);
+addEventListener('load',sizeStory);
 
 /* ================= LOADER ================= */
 const imgs=$$('#panels img');let loaded=0,shown=0;const t0=performance.now();
 imgs.forEach(i=>{if(i.complete)loaded++;else i.onload=i.onerror=()=>loaded++});
-(function tick(){const target=Math.min(100,(loaded/imgs.length)*70+Math.min(30,(performance.now()-t0)/40));shown=lerp(shown,target,.08);if(target>=99.5&&shown>98.5)shown=100;$('#pcN').textContent=Math.round(shown);
+(function tick(){const target=Math.min(100,(loaded/imgs.length)*70+Math.min(30,(performance.now()-t0)/22));shown=lerp(shown,target,.14);if(target>=99.5&&shown>98.5)shown=100;$('#pcN').textContent=Math.round(shown);
  if(shown<100&&performance.now()-t0<6000)requestAnimationFrame(tick);else{$('#pcN').textContent=100;setTimeout(start,250)}})();
 function start(){if(document.body.classList.contains('ready'))return;$('#loader').classList.add('done');document.body.classList.add('ready');lockScroll(false);setTimeout(()=>$('#loader').style.display='none',1300);sizeStory();if(location.hash)route()}
 requestAnimationFrame(frame);
