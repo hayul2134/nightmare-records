@@ -7,7 +7,8 @@
 <meta name="description" content="NIGHTMARE RECORDS · 잊힌 존재들에게 무대를. 버추얼 아티스트 레이블 나이트메어 레코즈 공식 사이트.">
 <meta property="og:title" content="NIGHTMARE RECORDS">
 <meta property="og:description" content="가장 달콤한 악몽, 당신의 밤을 찾아갑니다.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0816'/%3E%3Cpath d='M40 14a20 20 0 1 0 10 34A16 16 0 1 1 40 14z' fill='%23c9b8ff'/%3E%3C/svg%3E">
+<meta property="og:image" content="assets/og.jpg">
+<link rel="icon" type="image/svg+xml" href="assets/logo-emblem.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -33,7 +34,7 @@ img{display:block;max-width:100%}
 #loader{position:fixed;inset:0;z-index:200;background:var(--ink);display:grid;place-items:center;transition:opacity .9s .2s,visibility .9s .2s}
 #loader.done{opacity:0;visibility:hidden}
 #loader .lg{text-align:center}
-#loader .moon{width:64px;height:64px;margin:0 auto 26px;border-radius:50%;box-shadow:inset -14px 6px 0 0 var(--lav);transform:rotate(-20deg);animation:moonin 1.4s cubic-bezier(.2,.8,.2,1) both}
+#loader .moon{width:96px;height:96px;margin:0 auto 24px;animation:moonin 1.4s cubic-bezier(.2,.8,.2,1) both}
 @keyframes moonin{from{opacity:0;transform:rotate(-120deg) scale(.6)}}
 #loader .t{font-family:var(--serif);font-weight:700;letter-spacing:.42em;font-size:clamp(16px,2.4vw,24px);padding-left:.42em;overflow:hidden}
 #loader .t span{display:inline-block;animation:rise 1s cubic-bezier(.2,.8,.2,1) both}
@@ -45,7 +46,7 @@ img{display:block;max-width:100%}
 header{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:22px 4.5vw;transition:background .5s,padding .5s,backdrop-filter .5s}
 header.solid{background:rgba(11,8,22,.92);backdrop-filter:blur(14px);padding:14px 4.5vw;border-bottom:1px solid var(--line)}
 .logo{display:flex;align-items:center;gap:12px}
-.logo i{width:26px;height:26px;border-radius:50%;box-shadow:inset -6px 2px 0 0 var(--lav);transform:rotate(-20deg)}
+.logo img{width:34px;height:34px}
 .logo b{font-family:var(--serif);font-weight:700;letter-spacing:.24em;font-size:14px;line-height:1.1}
 .logo b small{display:block;font-size:9px;letter-spacing:.5em;color:var(--mute);font-weight:500}
 nav ul{display:flex;gap:34px;list-style:none;font-family:var(--serif);font-size:12px;letter-spacing:.22em}
@@ -130,6 +131,19 @@ h2.title em{font-family:var(--italic);font-weight:500;color:var(--lav)}
 .stats b{display:block;font-family:var(--serif);font-size:clamp(34px,4.5vw,60px);font-weight:700;line-height:1}
 .stats span{display:block;margin-top:12px;color:var(--mute);font-size:13px;letter-spacing:.05em}
 @media(max-width:900px){#about .grid{grid-template-columns:1fr;gap:40px}.stats{grid-template-columns:repeat(2,1fr)}.stats div:nth-child(2){border-right:0}.stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+
+/* key visual */
+#lineupkv{position:relative;overflow:hidden;background:var(--ink)}
+#lineupkv figure{position:relative;margin:0}
+#lineupkv img{width:100%;height:auto;display:block;transform:scale(1.08);transition:transform 2.4s cubic-bezier(.2,.8,.2,1)}
+#lineupkv.on img{transform:scale(1)}
+#lineupkv figure::before{content:'';position:absolute;inset:0;background:linear-gradient(var(--ink),transparent 16%,transparent 70%,var(--ink));z-index:1;pointer-events:none}
+#lineupkv figcaption{position:absolute;left:0;right:0;bottom:4vw;z-index:2;text-align:center}
+#lineupkv figcaption small{font-family:var(--serif);letter-spacing:.5em;font-size:11px;color:var(--lav)}
+#lineupkv figcaption b{display:block;font-family:var(--serif);font-weight:900;font-size:clamp(28px,4.6vw,64px);letter-spacing:.12em;margin-top:10px;text-shadow:0 6px 40px rgba(0,0,0,.6)}
+#lineupkv .names{display:flex;justify-content:center;gap:clamp(14px,4vw,60px);margin-top:14px;font-family:var(--serif);letter-spacing:.3em;font-size:12px}
+#lineupkv .names a{opacity:.8;transition:opacity .3s,color .3s}#lineupkv .names a:hover{opacity:1;color:var(--lav)}
 
 /* artists */
 #artists{background:linear-gradient(var(--ink),var(--ink2) 30%,var(--ink2) 70%,var(--ink))}
@@ -359,10 +373,10 @@ footer{border-top:1px solid var(--line);background:#07050f}
 </head>
 <body class="lock">
 
-<div id="loader"><div class="lg"><div class="moon"></div><div class="t"><span>NIGHTMARE RECORDS</span></div><div class="s">The sweetest nightmare, with you.</div></div></div>
+<div id="loader"><div class="lg"><img class="moon" src="assets/logo-emblem.svg" alt=""><div class="t"><span>NIGHTMARE RECORDS</span></div><div class="s">The sweetest nightmare, with you.</div></div></div>
 
 <header id="hdr">
-  <a href="#home" class="logo" aria-label="NIGHTMARE RECORDS 홈"><i></i><b>NIGHTMARE<small>RECORDS</small></b></a>
+  <a href="#home" class="logo" aria-label="NIGHTMARE RECORDS 홈"><img src="assets/logo-emblem.svg" alt=""><b>NIGHTMARE<small>RECORDS</small></b></a>
   <nav><ul>
     <li><a href="#about">ABOUT</a></li>
     <li><a href="#artists">ARTISTS</a></li>
@@ -415,6 +429,9 @@ footer{border-top:1px solid var(--line);background:#07050f}
     <div class="rv d3"><b data-n="2.1" data-s="만">0</b><span>오프라인 관객</span></div>
   </div>
 </div></section>
+
+<!-- KEY VISUAL -->
+<section id="lineupkv" class="rv"><figure><img src="assets/group-kv.webp" alt="NIGHTMARE RECORDS 전체 아티스트 단체 키비주얼" loading="lazy"><figcaption><small>NIGHTMARE RECORDS · ALL ARTISTS</small><b>5 CURSES, 1 STAGE</b><div class="names"><a href="#artist-sien">SIEN</a><a href="#artist-veil">VEIL</a><a href="#artist-mob">MOB</a><a href="#artist-milla">MILLA</a><a href="#artist-rue">RUE</a></div></figcaption></figure></section>
 
 <!-- ARTISTS -->
 <section id="artists"><div class="wrap">
@@ -530,7 +547,7 @@ footer{border-top:1px solid var(--line);background:#07050f}
   <div class="fbot"><span>© 2026 NIGHTMARE RECORDS Inc. All rights reserved.</span><span>※ 본 사이트는 기획 포트폴리오용 가상 기업이며, 등장하는 인물·단체·수치는 모두 허구입니다.</span></div>
 </div></footer>
 
-<div id="ap" aria-hidden="true"><div class="top"><a href="#home" class="logo"><i></i><b>NIGHTMARE<small>RECORDS</small></b></a><button class="x" id="apClose">ARTISTS ✕</button></div><div id="apIn"></div></div>
+<div id="ap" aria-hidden="true"><div class="top"><a href="#home" class="logo"><img src="assets/logo-emblem.svg" alt=""><b>NIGHTMARE<small>RECORDS</small></b></a><button class="x" id="apClose">ARTISTS ✕</button></div><div id="apIn"></div></div>
 <div id="modal"><div class="bg" data-close></div><div class="box"><button class="mx" data-close aria-label="닫기">✕</button><div id="mIn"></div></div></div>
 <button id="toTop" aria-label="맨 위로">↑</button>
 
@@ -562,6 +579,8 @@ const U=[
  {id:'MIDNIGHT',gen:'2ND GENERATION',debut:'2026.11.13 DEBUT',tag:'Eternity, and a single moment.',desc:'가장 깊은 밤의 듀오. 사라져 가는 유령과 사라질 수 없는 뱀파이어. 다크 신스팝과 오페라틱 보컬로 ‘영원과 찰나’를 노래한다.',m:['rue','milla']}
 ];
 const byId=Object.fromEntries(A.map(a=>[a.id,a]));
+/* 공식 채널 주소: 채널 개설 후 여기에만 입력하면 사이트 전체에 반영됩니다 */
+const CHANNELS={mob:{youtube:'',x:'',chzzk:''},veil:{youtube:'',x:'',chzzk:''},sien:{youtube:'',x:'',chzzk:''},rue:{youtube:'',x:'',chzzk:''},milla:{youtube:'',x:'',chzzk:''}};
 
 /* hero lineup: order veil, mob, milla, sien, rue -> center milla? use mob center */
 $('#lineup').innerHTML=A.map((a,i)=>`<a href="#artist-${a.id}" class="panel" style="--c:${a.c};transition-delay:${.1+i*.1}s"><img src="${IMG(a.id)}" alt="${a.name}"><span class="vn">${a.name}<small>${a.unit}</small></span></a>`).join('');
@@ -583,7 +602,7 @@ function openArtist(id){const a=byId[id];if(!a)return;const i=A.indexOf(a),prev=
    <div><dt>UNIT</dt><dd>${a.unit}</dd></div><div><dt>SPECIES</dt><dd>${a.sp}</dd></div><div><dt>AGE</dt><dd>${a.age}</dd></div><div><dt>HEIGHT</dt><dd>${a.h}</dd></div><div><dt>BIRTHDAY</dt><dd>${a.bd}</dd></div><div><dt>COLOR</dt><dd><span class="sw"></span>${a.colorName}</dd></div><div><dt>SYMBOL</dt><dd>${a.sym}</dd></div><div><dt>FANDOM</dt><dd>${a.fan}</dd></div>
   </dl><div class="kw">${a.kw.map(k=>`<span>#${k}</span>`).join('')}</div>
   <div class="tags"><div><small>LIVE</small><b>${a.tags[0]}</b></div><div><small>FAN ART</small><b>${a.tags[1]}</b></div><div><small>CLIP</small><b>${a.tags[2]}</b></div></div>
-  <div class="chs"><a href="#artist-${a.id}" data-soon>YOUTUBE</a><a href="#artist-${a.id}" data-soon>X</a><a href="#artist-${a.id}" data-soon>CHZZK</a></div></div></div>
+  <div class="chs">${[['youtube','YOUTUBE'],['x','X'],['chzzk','CHZZK']].map(([k,l])=>{const u=(CHANNELS[a.id]||{})[k];return u?`<a href="${u}" target="_blank" rel="noopener">${l}</a>`:`<a href="#artist-${a.id}" data-soon>${l}</a>`}).join('')}</div></div></div>
  <div class="ap-nav"><button data-go="${prev.id}"><small>← PREV</small>${prev.name}</button><button data-go="${next.id}"><small>NEXT →</small>${next.name}</button></div>`;
  if(!ap.classList.contains('open')){lastY=scrollY;ap.classList.add('open');ap.setAttribute('aria-hidden','false');document.body.classList.add('lock')}
  ap.scrollTop=0;
