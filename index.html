@@ -33,7 +33,10 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html.lenis,html.lenis body{height:auto}
 .lenis.lenis-stopped{overflow:clip}
-body{background:var(--ink);color:var(--fg);font-family:var(--kr);font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+html{scrollbar-color:#3a2f5c var(--ink);scrollbar-width:thin}
+::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-track{background:var(--ink)}::-webkit-scrollbar-thumb{background:#3a2f5c;border-radius:10px;border:2px solid var(--ink)}::-webkit-scrollbar-thumb:hover{background:#5a4b8c}
+#ap::-webkit-scrollbar,#modal .box::-webkit-scrollbar{width:8px}
+body{text-rendering:optimizeLegibility;background:var(--ink);color:var(--fg);font-family:var(--kr);font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
 body.lock{overflow:hidden}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
@@ -474,7 +477,6 @@ footer{border-top:1px solid var(--line);background:#06040b}
 #toTop.on{opacity:1;pointer-events:auto}
 #toTop svg{position:absolute;inset:0;transform:rotate(-90deg)}
 #toTop span{font-family:var(--disp);font-size:18px}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}#fog{display:none}}
 @media(max-width:700px){.grain{animation:none}}
 </style>
 </head>
@@ -660,7 +662,7 @@ const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const IMG=id=>`assets/${id}.webp`,IMS=id=>`assets/${id}-600.webp`,SET=id=>`srcset="assets/${id}-600.webp 600w, assets/${id}.webp 1000w"`;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),lerp=(a,b,t)=>a+(b-a)*t;
 const FINE=matchMedia('(hover:hover) and (pointer:fine)').matches;
-const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const RM=false; /* 윈도우 '애니메이션 효과 끄기' 설정과 무관하게 모든 연출을 동일하게 재생 */
 
 /* ================= DATA ================= */
 const A=[
